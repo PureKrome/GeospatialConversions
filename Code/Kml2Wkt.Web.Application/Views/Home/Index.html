@@ -1,28 +1,48 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Converting Kml to Wkt</title>
-    <link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
-    <link rel="stylesheet" href="http://openlayers.org/dev/examples/style.css" type="text/css">
+  <title>Converting Kml to Wkt</title>
+
+  <link rel="stylesheet" href="/Styles/site.min.css" type="text/css">
 </head>
 <body>
-    
-    <h1>Kml</h1>
-    <textarea id="kml" cols="50" rows="12"></textarea><a href="https://gist.github.com/PureKrome/5626014" target="_new">Some sample Kml</a>
-    
+  <div class="padded">
+    <h1>KML => WKT</h1>
     <hr/>
-    <div id="map" class="smallmap"></div>
+  </div>
+  <div class="left-col col">
+    <div class="panel padded">
+      <h2>Kml</h2>
+      <textarea id="kml" cols="50" rows="12"></textarea>
+      <a id="sample" href="#">Sample KML </a><a href="https://gist.github.com/PureKrome/5626014" target="_new">(View Gist)</a>
+    </div>
+  </div>
+  <div class="map-col col">
     
-    <h1>Wkt</h1>
-    <textarea id="wkt" cols="50" rows="12"></textarea>
-    
-    <script src="/Scripts/jquery-2.0.0.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
-    <script src="http://openlayers.org/api/OpenLayers.js"></script>
-    <script src="/Scripts/GeoSpatial.js"></script>
-    
-    <script>
-        init('map', $('#kml'), $('#wkt'));
-    </script>
+    <div class="panel padded">
+      <h2>Map</h2>
+      <div id="map" class="smallmap"></div>
+    </div>
+  </div>
+  <div class="right-col col">
+    <div class="panel padded">
+      <h2>Wkt</h2>
+      <textarea id="wkt" cols="50" rows="12"></textarea>
+    </div>
+  </div>
+  <script src="/Scripts/jquery-2.0.0.min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+  <script src="http://openlayers.org/api/OpenLayers.js"></script>
+  <script src="/Scripts/GeoSpatial.js"></script>
+
+  <script>
+    init('map', $('#kml'), $('#wkt'));
+  </script>
+  <script>
+    $("#sample").click(function() {
+      $("#kml").text('<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://earth.google.com/kml/2.2">\n<Document>\n  <name>Bribie Island, QLD</name>\n  <description><![CDATA[]]></description>\n  <Style id="style1">\n    <LineStyle>\n      <color>40000000</color>\n      <width>3</width>\n    </LineStyle>\n    <PolyStyle>\n      <color>73FF0000</color>\n      <fill>1</fill>\n      <outline>1</outline>\n    </PolyStyle>\n  </Style>\n  <Placemark>\n    <name>Shape 1</name>\n    <description><![CDATA[]]></description>\n    <styleUrl>#style1</styleUrl>\n    <Polygon>\n      <outerBoundaryIs>\n        <LinearRing>\n          <tessellate>1</tessellate>\n          <coordinates>\n            153.135086,-26.817408,0.000000\n      153.134644,-26.812428,0.000000\n      153.132767,-26.812351,0.000000\n      153.132843,-26.808750,0.000000\n      153.129410,-26.808826,0.000000\n      153.129410,-26.810053,0.000000\n      153.127701,-26.812658,0.000000\n      153.131042,-26.823841,0.000000\n      153.127014,-26.837091,0.000000\n      153.123154,-26.840231,0.000000\n      153.117920,-26.846893,0.000000\n      153.116455,-26.851183,0.000000\n      153.118851,-26.874765,0.000000\n      153.114731,-26.886555,0.000000\n      153.099121,-26.895741,0.000000\n      153.085892,-26.897732,0.000000\n      153.075089,-26.911354,0.000000\n      153.074051,-26.922529,0.000000\n      153.081436,-26.933243,0.000000\n      153.081772,-26.947933,0.000000\n      153.085556,-26.953289,0.000000\n      153.082809,-26.957575,0.000000\n      153.077667,-26.960482,0.000000\n      153.076279,-26.973486,0.000000\n      153.074905,-26.982359,0.000000\n      153.092072,-26.992760,0.000000\n      153.096191,-27.016314,0.000000\n      153.128464,-27.039862,0.000000\n      153.132584,-27.053011,0.000000\n      153.144257,-27.069216,0.000000\n      153.154907,-27.076246,0.000000\n      153.164520,-27.106506,0.000000\n      153.184433,-27.100698,0.000000\n      153.196106,-27.100393,0.000000\n      153.211548,-27.085112,0.000000\n      153.208466,-27.063711,0.000000\n      153.178940,-27.017843,0.000000\n      153.162460,-26.982052,0.000000\n      153.150787,-26.942577,0.000000\n      153.134308,-26.876143,0.000000\n      153.132248,-26.841227,0.000000\n      153.132584,-26.827595,0.000000\n      153.135086,-26.817408,0.000000\n    </coordinates>\n  </LinearRing>\n</outerBoundaryIs>\n</Polygon>\n</Placemark>\n</Document>\n</kml>');
+      $("#kml").blur();
+    });
+  </script>
 </body>
 </html>
