@@ -13,7 +13,7 @@ function init(mapElement, kmlElement, wktElement) {
             ),
             new OpenLayers.Layer.Vector('Kml data')
         ],
-        center: new OpenLayers.LonLat(153.132, -26.987)
+        center: new OpenLayers.LonLat(144.965, - 37.803)
             // Google.v3 uses web mercator as projection, so we have to
             // transform our coordinates
             .transform('EPSG:4326', 'EPSG:3857'),
