@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Converting Kml to Wkt</title>
+    <link rel="stylesheet" href="http://openlayers.org/dev/theme/default/style.css" type="text/css">
+    <link rel="stylesheet" href="http://openlayers.org/dev/examples/style.css" type="text/css">
+</head>
+<body>
+    
+    <h1>Kml</h1>
+    <textarea id="kml" cols="50" rows="12"></textarea>
+    
+    <hr/>
+    <div id="map" class="smallmap"></div>
+    
+    <h1>Wkt</h1>
+    <textarea id="wkt" cols="50" rows="12"></textarea>
+    
+    <script src="/Scripts/jquery-2.0.0.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script src="/Scripts/GeoSpatial.js"></script>
+    
+    <script>
+        init('map', $('#kml'), $('#wkt'));
+    </script>
+</body>
+</html>
