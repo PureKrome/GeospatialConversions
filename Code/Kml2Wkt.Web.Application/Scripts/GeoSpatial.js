@@ -64,6 +64,10 @@ function process(kml) {
     zoomToPolygon(features);
 
     // Output the features as WKT.
-    var wktFormat = new OpenLayers.Format.WKT();
+    var options = {
+        'internalProjection': new OpenLayers.Projection("EPSG:3857"),
+        'externalProjection': new OpenLayers.Projection("EPSG:4326")
+    };
+    var wktFormat = new OpenLayers.Format.WKT(options);
     return wktFormat.write(features);
 }
