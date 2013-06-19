@@ -3,6 +3,8 @@
 
 This is a simple web application that converts [Keyhole Markup Language](http://en.wikipedia.org/wiki/Keyhole_Markup_Language) (aka. KML) to [Well Known Text](http://en.wikipedia.org/wiki/Well-known_text) (aka. WKT)
 
+*[TRY THE LIVE SITE, NOW](http://geospatialconversions.azurewebsites.net/)*
+
 Using various existing mapping applications you can now draw your own KML data and then use our website to convert it to WKT.
 
 ## Why worry about converting?
